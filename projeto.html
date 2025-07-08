@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Marcos Antonio Henriques Macedo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icomoon/style.css">
+</head>
+
+<body>
+    <div class="wrapperContainer">
+        <header class="header container">
+            <nav class="header_nav">
+                <ul>
+                    <li><a class="header_menu" href="index.html">Inicio</a></li>
+                    <li><a class="header_menu" href="projeto.html">Projetos</a></li>
+                    <li><a class="header_menu" href="sobre.html">Sobre</a></li>
+                    <li><a class="header_menu" href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="wrapperContainer wrapperContainer-hero">
+        <section class="container heroBanner">
+            <div class="header_content">
+                <h1 class="hero_title">Marcos Antonio Henriques Macedo</h1>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div>
+                <H2>Projetos</H2>
+                <p>eu desenvolvi no meu ultimo curso de redes uma VPN totalmente gratuita, utilizando serviços de dominio e servidores em nuvem gratuitos, o projeto conta com sistema de criptografia de ultima geração para a epoca. constava com um sistema
+                    de autentição por QRcode e validação do usuario. o adminstrador da rede tem acesso a todos o que estão conectados. dentro da rede era possivel compartilhar arquivos como se estivesse compartilhando em uma rede local utilizando serviços
+                    de mapeamento de rede caracteristicos de sistemas windows.</p>
+            </div>
+            <!-- Confetti lib -->
+            <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+            <!-- Script confetti -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const menuLinks = document.querySelectorAll(".header_menu");
+
+                    menuLinks.forEach(link => {
+                        link.addEventListener("click", function(e) {
+                            // Dispara o confete antes de ir para outra página
+                            confetti({
+                                particleCount: 100,
+                                spread: 70,
+                                origin: {
+                                    y: 0.6
+                                }
+                            });
+
+                            // Pequeno atraso para dar tempo do confete aparecer
+                            e.preventDefault();
+                            const href = this.getAttribute("href");
+                            setTimeout(() => {
+                                window.location.href = href;
+                            }, 500); // 500ms de atraso
+                        });
+                    });
+                });
+            </script>
+</body>
+
+</html>

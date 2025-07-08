@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Marcos Antonio Henriques Macedo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icomoon/style.css">
+</head>
+
+<body>
+    <div class="wrapperContainer">
+        <header class="header container">
+            <nav class="header_nav">
+                <ul>
+                    <li><a class="header_menu" href="index.html">Inicio</a></li>
+                    <li><a class="header_menu" href="projeto.html">Projetos</a></li>
+                    <li><a class="header_menu" href="sobre.html">Sobre</a></li>
+                    <li><a class="header_menu" href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="wrapperContainer wrapperContainer-hero">
+        <section class="container heroBanner">
+            <div class="header_content">
+                <h1 class="hero_title">Marcos Antonio Henriques Macedo</h1>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div>
+                <h2>Sobre Mim</h2>
+                <p>Atualmente, estou cursando Análise e Desenvolvimento de Sistemas na UNINTER. Paralelamente, estou realizando o curso de segurança cibernetica, onde tenho me aprofundado em segurança e pentest, aprimorando minhas habilidades para atuar
+                    com tecnologias modernas.</p>
+            </div>
+            <!-- Confetti lib -->
+            <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+            <!-- Script confetti -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const menuLinks = document.querySelectorAll(".header_menu");
+
+                    menuLinks.forEach(link => {
+                        link.addEventListener("click", function(e) {
+                            // Dispara o confete antes de ir para outra página
+                            confetti({
+                                particleCount: 100,
+                                spread: 70,
+                                origin: {
+                                    y: 0.6
+                                }
+                            });
+
+                            // Pequeno atraso para dar tempo do confete aparecer
+                            e.preventDefault();
+                            const href = this.getAttribute("href");
+                            setTimeout(() => {
+                                window.location.href = href;
+                            }, 500); // 500ms de atraso
+                        });
+                    });
+                });
+            </script>
+</body>
+
+</html>
